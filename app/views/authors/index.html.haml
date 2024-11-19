@@ -7,7 +7,7 @@
         %th Author name
         %th Phone
         %th Address
-        %th Published books
+        %th Books
         %th
         %th
         %th
@@ -18,7 +18,7 @@
           %td= author.author_name
           %td= author.phone
           %td= author.address
-          %td= author.published_books
+          %td= author.books_count
           %td= link_to 'Show', author
           %td= link_to 'Edit', edit_author_path(author)
           %td

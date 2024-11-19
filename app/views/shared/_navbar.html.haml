@@ -9,6 +9,8 @@
           %a.nav-link.active{"aria-current" => "page", :href => "#"} Home
         %li.nav-item
           = link_to 'Author', authors_path, class: 'nav-link'
+        %li.nav-item
+          = link_to 'Book', books_path, class: 'nav-link'
 
       = form_tag(destroy_user_session_path, method: :delete) do
         = submit_tag 'Sign Out', class: 'btn btn-danger'
