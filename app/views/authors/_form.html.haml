@@ -1,0 +1,21 @@
+= form_for @author do |f|
+  - if @author.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@author.errors.count, "error")} prohibited this author from being saved:"
+      %ul
+        - @author.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :author_name
+    = f.text_field :author_name
+  .field
+    = f.label :phone
+    = f.text_field :phone
+  .field
+    = f.label :address
+    = f.text_field :address
+  .field
+    = f.label :published_books
+    = f.number_field :published_books
+  .actions
+    = f.submit 'Save'
