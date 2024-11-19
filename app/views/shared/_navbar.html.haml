@@ -1,0 +1,12 @@
+%nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  .container-fluid
+    %a.navbar-brand{:href => "#"} BookStore
+    %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarSupportedContent", "data-bs-toggle" => "collapse", :type => "button"}
+
+    #navbarSupportedContent.navbar-collapse
+      %ul.navbar-nav.me-auto.mb-2.mb-lg-0
+        %li.nav-item
+          %a.nav-link.active{"aria-current" => "page", :href => "#"} Home
+
+      = form_tag(destroy_user_session_path, method: :delete) do
+        = submit_tag 'Sign Out', class: 'btn btn-danger'
