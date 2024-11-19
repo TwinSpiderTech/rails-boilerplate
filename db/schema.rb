@@ -10,28 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_11_19_200355) do
-  create_table "authors", force: :cascade do |t|
-    t.string "author_name"
-    t.string "phone"
-    t.string "address"
-    t.integer "published_books"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "books_count", default: 0, null: false
-  end
+ActiveRecord::Schema[7.0].define(version: 2024_11_19_205027) do
+# Could not dump table "authors" because of following StandardError
+#   Unknown type 'flot' for column 'sale_revenue'
 
-  create_table "books", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.integer "author_id", null: false
-    t.decimal "price"
-    t.date "published_date"
-    t.integer "sold"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["author_id"], name: "index_books_on_author_id"
-  end
+# Could not dump table "books" because of following StandardError
+#   Unknown type 'flot' for column 'revenue'
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

@@ -10,9 +10,9 @@ require 'faker'
 
 User.create!(email: 'me@admin.com', password: 'password') unless User.exists?(email: 'me@admin.com')
 
-30.times.map do
+rand(10..30).times.map do
   author = Author.create!(
-    author_name: Faker::Name.name,
+    author_name: Faker::Name.unique.name,
     phone: Faker::PhoneNumber.phone_number,
     address: Faker::Address.full_address,
     published_books: rand(10..50)
@@ -22,9 +22,9 @@ end
 
 author_ids = Author.pluck(:id)
 
-100.times.map do
+rand(50..100).times.map do
   book = Book.create!(
-    title: Faker::Book.title,
+    title: Faker::Book.unique.title,
     description: Faker::Lorem.paragraph(sentence_count: 3),
     author_id: author_ids.sample,
     price: rand(10..150),

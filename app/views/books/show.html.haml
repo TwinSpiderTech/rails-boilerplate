@@ -8,13 +8,16 @@
   = @book.description
 %p
   %b Author:
-  = @book.author
+  = link_to @book.author.author_name, author_path(@book.author)
 %p
   %b Price:
   = @book.price
 %p
   %b Published date:
   = @book.published_date
+%p
+  %b Sold:
+  = @book.sold
 
 = link_to 'Edit', edit_book_path(@book)
 \|

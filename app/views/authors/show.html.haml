@@ -16,3 +16,35 @@
 = link_to 'Edit', edit_author_path(@author)
 \|
 = link_to 'Back', authors_path
+
+
+.p-3 
+  %h1= "Books (#{@author.books.count})"
+
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Title
+        %th Author
+        %th Published
+        %th Price
+        %th Sold
+        %th Revenue
+        %th
+
+    %tbody
+      - @author.books.each do |book|
+        %tr
+          %td= book.title
+          %td= book.author.author_name
+          %td= book.published_date
+          %td= book.price
+          %td= book.sold
+          %td= book.revenue
+          %td= link_to 'Show', book
+      %tr 
+        = @author.books.sum(:revenue)
+
+  %br
+
+  = link_to 'New Book', new_book_path

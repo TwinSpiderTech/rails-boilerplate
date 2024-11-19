@@ -4,9 +4,9 @@ class CreateBooks < ActiveRecord::Migration[7.0]
       t.string :title
       t.text :description
       t.references :author, null: false, foreign_key: true
-      t.decimal :price
+      t.float :price
       t.date :published_date
-      t.integer :sold
+      t.integer :sold, default: 0
 
       t.timestamps
     end

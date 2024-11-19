@@ -8,6 +8,7 @@
         %th Phone
         %th Address
         %th Books
+        %th.text-center Sale
         %th
         %th
         %th
@@ -18,7 +19,8 @@
           %td= author.author_name
           %td= author.phone
           %td= author.address
-          %td= author.books_count
+          %td.text-center= author.books_count
+          %td.text-end= author.sale_revenue.currency
           %td= link_to 'Show', author
           %td= link_to 'Edit', edit_author_path(author)
           %td
